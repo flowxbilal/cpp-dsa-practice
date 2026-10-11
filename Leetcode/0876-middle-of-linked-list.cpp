@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 
@@ -48,9 +49,9 @@ int main()
 
     Solution obj;
 
-    ListNode* middle = obj.middleNode(&a);
+    ListNode* result = obj.middleNode(&a);
 
-    cout << "Middle node: " << middle->val;
+    cout << "Middle node: " << result->val;
 
     return 0;
 }

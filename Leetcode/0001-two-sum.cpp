@@ -1,0 +1,49 @@
+
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
+class Solution
+{
+public:
+    vector<int> twoSum(vector<int>& nums, int target)
+    {
+        unordered_map<int, int> seen;
+
+        for(int i = 0; i < nums.size(); i++)
+        {
+            int needed = target - nums[i];
+
+            if(seen.count(needed))
+            {
+                return {seen[needed], i};
+            }
+
+            seen[nums[i]] = i;
+        }
+
+        return {};
+    }
+};
+
+int main()
+{
+    vector<int> nums = {2, 7, 11, 15};
+    int target = 9;
+
+    Solution obj;
+    vector<int> result = obj.twoSum(nums, target);
+
+    if(result.size() == 2)
+    {
+        cout << "Index 1: " << result[0] << endl;
+        cout << "Index 2: " << result[1] << endl;
+    }
+    else
+    {
+        cout << "No pair found";
+    }
+
+    return 0;
+}
