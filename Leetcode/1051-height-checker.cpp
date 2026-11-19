@@ -10,8 +10,6 @@ public:
     {
         vector<int> expected = heights;
         int n = heights.size();
-
-        // Insertion Sort
         for(int i = 1; i < n; i++)
         {
             int key = expected[i];
